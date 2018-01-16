@@ -30,7 +30,7 @@ $(function () {
       $loader.appendTo($tvShowsContainer)
       
       $.ajax({
-        url: "http://api.tvmaze.com/search/shows?",
+        url: "https://api.tvmaze.com/search/shows?",
         data: {q: search},
         success: function (response, textStatus, xhr) {
           $loader.remove()
@@ -59,7 +59,7 @@ $(function () {
 
   //listados de shows
   $.ajax({
-      url: 'http://api.tvmaze.com/shows',
+      url: 'https://api.tvmaze.com/shows',
       success : function(shows, textStatus, xhr){
         renderShows(shows)
       }       
