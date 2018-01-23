@@ -6,7 +6,7 @@ $(function () {
       $tvShowsContainer.find('.loader').remove()
       let article = template
       .replace(':name:', show.name)
-      .replace(':img:', show.image.medium)
+      .replace(':img:', show.image ? show.image.medium : '')
       .replace(':summary:', show.summary)
       .replace(':alt img:', show.name + "  logo")
 
@@ -15,6 +15,8 @@ $(function () {
         
     });
   }
+
+
   
   // submit search form
   $('#app-body')
@@ -43,29 +45,33 @@ $(function () {
       });
 
     })
-
+    
   // template de base
   let template =` 
   <article class="tv-show">
+    
     <div class="left">
       <img src=":img:" alt=":alt img:">
     </div>
     <div class="right info">
-      <h1>:name:</h1>
+      <a href= "#"><h1>:name:</h1></a>
       <p>:summary:</p>
     </div>
+
   </article>`
   
 
-  //listados de shows
-  $.ajax({
-      url: 'https://api.tvmaze.com/shows',
-      success : function(shows, textStatus, xhr){
-        renderShows(shows)
-      }       
-  })
+     if (!localStorage.shows) {
+        //listados de shows
+        $.ajax('https://api.tvmaze.com/shows/')
+          .then( function(shows) {
+            $tvShowsContainer.find('.loader').remove()
+            renderShows(shows)
+          })      
+     }else{
+        renderShows(JSON.parse(localStorage.shows))
+     }
 })
-
 // $('#boton').click(function(){
 //   swal({
 //     title: "Felicidades!", 

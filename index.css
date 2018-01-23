@@ -1,53 +1,53 @@
 @font-face {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: normal;
-    src: local("?"), url("Roboto/Roboto-LightItalic.ttf") format("truetype");
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: local("?"), url("Roboto/Roboto-LightItalic.ttf") format("truetype");
 }
 
 body {
-    background-color:#e6e0e0;
-    margin: 0px;
+  background-color: #e6e0e0;
+  margin: 0px;
 }
 #app-container {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 
 * {
-    font-family: Roboto;
+font-family: Roboto;
 }
 
 #app-header {
-    background-color: #34a3d6;
-    width: 100%;
-    height: 14vh;
-    position: fixed;
-    text-align: center;
-    margin-bottom: 10px;
+  background-color: #34a3d6;
+  width: 100%;
+  height: 14vh;
+  position: fixed;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 #app-header h1 {
-    line-height: 10vh;
-    margin: 0px;
-    color: white;
-    padding: 10px;
-    
+  line-height: 10vh;
+  margin: 0px;
+  color: white;
+  padding: 10px;
+  
 }
 
 #app-body {
-    padding-top: 15vh;
-    width: 80%;
-    margin: auto;
-    min-height: 75vh;
+  padding-top: 15vh;
+  width: 80%;
+  margin: auto;
+  min-height: 75vh;
 }
 
 #boton {
-    background-color: #34a3d6;
-    color: white;
-    font-size: 20px;
-    
+  background-color: #34a3d6;
+  color: white;
+  font-size: 20px;
+  
 }
 
 /* #card {
@@ -63,17 +63,17 @@ body {
 } */
 
 app-footer {
-    width: 100%;
-    min-height: 10vh;
+  width: 100%;
+  min-height: 10vh;
 }
 #app-footer p {
-    color: #000000;
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-    border-top: 1px solid #999999;
-    margin-top: 30px;
-    padding:10px;
+  color: #000000;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #999999;
+  margin-top: 30px;
+  padding:10px;
 }
 .tv-show {
   width: 100%;
@@ -111,25 +111,25 @@ app-footer {
 }
 
 #search-form {
-    margin-bottom: 10px;
-    margin-right: 0px;
-    display: inline;
-    float: right;
-    
+  margin-bottom: 10px;
+  margin-right: 0px;
+  display: inline;
+  float: right;
+  
 }
 #search-form button {
-    margin-left: 5px;
-    border-radius: 6px;
+  margin-left: 5px;
+  border-radius: 6px;
 }
 
 #search-form button:hover {
-    background-color: #999999;
+  background-color: #999999;
 }
 
 #search-form input[type="text"]{
-    width: 300px;
-    padding: 10px;
-    border-radius: 6px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 6px;
     
 }
 
