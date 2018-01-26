@@ -1,7 +1,9 @@
 $(function () {
-  let = $tvShowsContainer = $('#app-body').find('.tv-shows')
+  let $tvShowsContainer = $('#app-body').find('.tv-shows')
+  
   
   function renderShows(shows) {
+
     shows.forEach(function (show) {
       $tvShowsContainer.find('.loader').remove()
       let article = template
@@ -54,23 +56,39 @@ $(function () {
       <img src=":img:" alt=":alt img:">
     </div>
     <div class="right info">
-      <a href= "#"><h1>:name:</h1></a>
+      <h1>:name:</h1>
       <p>:summary:</p>
     </div>
 
   </article>`
   
+  
+ if (!localStorage.shows) {
+    //listados de shows
+    $.ajax('https://api.tvmaze.com/shows')
+      .then( function(shows) {
+        $tvShowsContainer.find('.loader').remove()
+        renderShows(shows)
+      })      
+ }else{
+    renderShows(JSON.parse(localStorage.shows))
+ }
 
-     if (!localStorage.shows) {
-        //listados de shows
-        $.ajax('https://api.tvmaze.com/shows/')
-          .then( function(shows) {
-            $tvShowsContainer.find('.loader').remove()
-            renderShows(shows)
-          })      
-     }else{
-        renderShows(JSON.parse(localStorage.shows))
-     }
+ // jQuery.get('https://api.tvmaze.com/shows/1', {param1: 'value1'}, function(data, textStatus, xhr) {
+ //   console.log(data)
+ // });
+  
+ 
+ // $.ajax({
+ //   url: 'https://api.tvmaze.com/shows/5',
+ //   type: 'GET',
+ //   data: {param1: 'value1'},
+ //   success: function(data){
+ //    console.log(data)
+ //   }
+ // })
+ 
+  
 })
 // $('#boton').click(function(){
 //   swal({
