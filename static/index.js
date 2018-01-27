@@ -26,14 +26,44 @@ $(function () {
   function renderDetail(show) {
     $tvShowsContainer.find('.loader').remove()
     let article = template2
+        .replace(':id:', show.id)
         .replace(':name:', show.name)
-        .replace(':img:', show.image ? show.image.medium : '')
         .replace(':summary:', show.summary)
+        .replace(':img:', show.image ? show.image.medium : '')
         .replace(':alt img:', show.name + "  logo")
         .replace(':rating:', show.rating.average)
       let $article = $(article)
       $tvShowsContainer.append($article.fadeIn(1500));
   }
+
+  function renderSeasons(seasons) {
+    seasons.forEach(function (show) {
+     let article = seasonsTemplate
+          .replace(':id:', show.id)
+          .replace(':number:', show.number)
+          // .replace(':img:', show.image ? show.image.medium : '')
+        let $article = $(article)
+        $tvShowsContainer.find('.seasons').remove()
+        $article.appendTo('.info div.inline')
+
+        // $tvShowsContainer.append($article.fadeIn(1500)); 
+    }) 
+  }
+
+function renderSDetail(detail) {
+      let article = detailSeasonTemplate
+        .replace(':id:', detail.id)
+        .replace(':number:', detail.number)
+        .replace(':img:', detail.image ? detail.image.medium : '')
+        .replace(':alt img:', detail.name + "  logo")
+        .replace(':premiereDate:', detail.premiereDate )
+
+      let $article = $(article)
+      $tvShowsContainer.append($article.fadeIn(1500));
+        
+   
+  }
+
 
 
   
@@ -92,10 +122,42 @@ $(function () {
       <h1>:name:</h1>
       <p>:summary:</p>
       <button class= "like">💗</button>
-      <h3>Puntuación</h3><h4>:rating:/10</h4>
-    </div>
+      <h3 class="inline">Puntuación</h3><h4 class="inline">:rating:/10</h4><br>
+      <br>
+      <input type="button" class="seasons" value="https://api.tvmaze.com/shows/:id:/seasons">
+      <h3 class="inline">Temporadas</h3></button>
+      <div class="inline">
+        
+      </div>
+      
+
+    </di>
 
   </article>`
+
+
+  let seasonsTemplate= `
+   
+    <input class="s-detail" value="https://api.tvmaze.com/seasons/:id:"><h4 class="inline">:number:</h4></input>
+    
+  `
+  let detailSeasonTemplate = `
+  <article class="tv-show">
+    
+    <div class="left"> 
+      <img src=":img:" alt=":alt img:">
+    </div>
+    <div class="right info">
+      <h1>Temporada :number:</h1>
+      <button class= "like">💗</button>
+     <h3 class="inline">Fecha de Lanzamiento:</h3><h4 class="inline">:premiereDate:</h4><br>
+     <br>
+      <input type="button" class="episopdes" value="https://api.tvmaze.com/seasons/:id:"></button>
+    </div>
+
+  </article>
+
+  `
   
   
  if (!localStorage.shows) {
@@ -116,11 +178,36 @@ $(function () {
     $loader.appendTo($tvShowsContainer)
     $.ajax($this.val())
       .then(function(show) {
-        console.log(show)
+        
         renderDetail(show)
       })
+      
+  })
+  
+  $tvShowsContainer.on('click','input.seasons', function(event){
+    let $this= $(this)
+    $.ajax($this.val())
+      .then(function(seasons) {
+        
+        renderSeasons(seasons)
+      
+      })
+         
+  })
 
-    });
+ $tvShowsContainer.on('click','input.s-detail', function(event){
+    let $this= $(this)    
+    $.ajax($this.val())
+      .then(function(seasons) {
+        $tvShowsContainer.find($this).remove()
+        console.log(seasons)
+        renderSDetail(seasons)
+        
+      })
+  })        
+        
+
+
 
 
   

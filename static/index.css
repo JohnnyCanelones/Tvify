@@ -120,9 +120,33 @@ app-footer {
 
 .tv-show .url{
   color: transparent;
+  width: 123px;
   border: 0;
   outline: 0;
   top: 38px;
+  position: absolute;
+  cursor: pointer;
+  background:  transparent;
+}
+.seasons {
+  color: transparent;
+  border: 0;
+  width: 95px;
+  outline: 0;
+  /*top: 193px;*/
+  position: absolute;
+  cursor: pointer;
+  background:  transparent;
+}
+
+
+/*season detail*/
+.s-detail {
+  color: transparent;
+  border: 0;
+  width: 6px;
+  outline: 0;
+  /*top: 193px;*/
   position: absolute;
   cursor: pointer;
   background:  transparent;
@@ -140,6 +164,18 @@ app-footer {
   width: 75%;
   text-align: justify;
   margin-left: 20px;
+}
+
+.inline{
+  display: inline;
+}
+
+h4.inline{
+  margin-right: 10px;
+}
+
+h3.inline {
+  margin-right: 11px;
 }
 
 .left {
