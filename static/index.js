@@ -1,6 +1,7 @@
 $(function () {
   let $loader = $('<div class="loader">Cargando...</div>')
   let $tvShowsContainer = $('#app-body').find('.tv-shows')
+  console.log($tvShowsContainer)
   $tvShowsContainer.on('click', 'button.like', function (ev){
     let $this= $(this)
     $this.closest('.tv-show').toggleClass('liked');
@@ -57,6 +58,7 @@ function renderSDetail(detail) {
         .replace(':img:', detail.image ? detail.image.medium : '')
         .replace(':alt img:', detail.name + "  logo")
         .replace(':premiereDate:', detail.premiereDate )
+        
 
       let $article = $(article)
       $tvShowsContainer.append($article.fadeIn(1500));

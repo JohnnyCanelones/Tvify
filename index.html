@@ -2,27 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <title>TVify</title>
-    <link rel="stylesheet" href='static/index.css'>
     <!-- Sweet Alert -->
     <script src="static/plugins/sweetalert/sweetalert.min.js"></script>
     <link rel="stylesheet" href="static/plugins/sweetalert/sweetalert.css">
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/css/bootstrap-flex.min.css">
+    
+    <link rel="stylesheet" href='static/index.css'>
 </head>
 <body>
     <div id="app-container">
       <header id="app-header">
-        <a class="titulo" href=""><h1 id="app-title">TVify</h1></a>  
+        <div class="container">
+          <div class="row flex-items-xs-middle">
+            <div class="col-xs-12">
+              <a class="titulo " href=""><h1 class="text-xs-center" id="app-title">TVify</h1></a>  
+            </div>
+          </div>
+        </div>
       </header>
       
       <section id="app-body">
-        <!-- <button id="boton">holi</button> -->
-          <form id="search-form">
-            <input type="text" >
-            <button type="submit">Buscar</button>
-          </form>
-          
+        <div class="container">
+          <div class="row  flex-items-xs-middle flex-items-xs-around " style="border: 1px solid red">
+            <div class=" col-xs-12">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control"></input>
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn"><span>Buscar</span></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div> 
+        </div>   
+        
         <div class="tv-shows">
           <div class="loader">Cargando...</div>
           
@@ -36,6 +53,9 @@
       </footer>
     </div>
     <script type="text/javascript" src="static/plugins/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="static/index.js"></script>    
-    </body>
+    <script type="text/javascript" src="static/index.js"></script>
+    <script src="static/plugins/popper.min.js" ></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="static/plugins/bootstrap/js/bootstrap.min.js" "></script>    
+  </body>
 </html>
