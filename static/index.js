@@ -147,17 +147,19 @@ function renderSDetail(detail) {
   `
   let detailSeasonTemplate = `
   <article class="tv-show">
-    
-    <div class="left"> 
-      <img src=":img:" alt=":alt img:">
+    <div class="row flex-items-xs-middle flex-items-xs-between">
+      <div class="text-xs-center col-xs-12 col-md-3"> 
+        <img src=":img:" alt=":alt img:">
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <h1>Temporada :number:</h1>
+        <button class= "like">💗</button>
+       <h3 class="inline">Fecha de Lanzamiento:</h3><h4 class="inline">:premiereDate:</h4><br>
+       <br>
+        <input type="button" class="episopdes" value="https://api.tvmaze.com/seasons/:id:"></button>
+      </div>
     </div>
-    <div class="right info">
-      <h1>Temporada :number:</h1>
-      <button class= "like">💗</button>
-     <h3 class="inline">Fecha de Lanzamiento:</h3><h4 class="inline">:premiereDate:</h4><br>
-     <br>
-      <input type="button" class="episopdes" value="https://api.tvmaze.com/seasons/:id:"></button>
-    </div>
+
 
   </article>
 
