@@ -2,36 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <title>TVify</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/css/bootstrap-flex.min.css">
+    
     <link rel="stylesheet" href='static/index.css'>
 </head>
 <body>
     <div id="app-container">
       <header id="app-header">
-        <a class="titulo" href=""><h1 id="app-title">;dfksl;kflsdkfTVify</h1></a>  
+        <div class="container">
+          <div class="row flex-items-xs-middle">
+            <div class="col-xs-12">
+              <a class="titulo " href=""><h1 class="text-xs-center" id="app-title">TVify</h1></a>  
+            </div>
+          </div>
+        </div>
       </header>
       
       <section id="app-body">
-        <!-- <button id="boton">holi</button> -->
-          <form id="search-form">
-            <input type="text" >
-            <button type="submit">Buscar</button>
-          </form>
-          
-        <div class="tv-shows">
-          <div class="loader">Cargando...</div>
-          
-        </div>
+        <div class="container">
+          <div class="row  flex-items-xs-middle flex-items-xs-around ">
+            <div class=" col-xs-12">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control"></input>
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-search"><span>Buscar</span></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div> 
+        </div>   
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              
+                <div class="tv-shows">
+                  <div class="loader">Cargando...</div>
+                </div>
+            </div>
+          </div>
+
       </section >
       
       <footer id="app-footer">
         <div id="card" class="sombra">
-            <p>hecho con <3 por los alumnos de platzi</p>
+            <p>hecho con 💘 con ayuda de platzi</p>
           </div>
       </footer>
     </div>
     <script type="text/javascript" src="static/plugins/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="static/index.js"></script>    
-    </body>
+    <script type="text/javascript" src="static/index.js"></script>
+    <script src="static/plugins/popper.min.js" ></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="static/plugins/bootstrap/js/bootstrap.min.js" "></script>    
+  </body>
 </html>
