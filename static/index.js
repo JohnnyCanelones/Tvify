@@ -45,7 +45,7 @@ $(function () {
           // .replace(':img:', show.image ? show.image.medium : '')
         let $article = $(article)
         $tvShowsContainer.find('.seasons').remove()
-        $article.appendTo('.info div.inline')
+        $article.appendTo('div .numeros')
 
         // $tvShowsContainer.append($article.fadeIn(1500)); 
     }) 
@@ -116,24 +116,26 @@ function renderSDetail(detail) {
 // template de detalles
   let template2 =
     `<article class="tv-show">
-    
-    <div class="left"> 
-      <img src=":img:" alt=":alt img:">
+      <div class="row flex-items-xs-middle flex-items-xs-between">
+        <div class="text-xs-center col-xs-12 col-md-3"> 
+          <img src=":img:" alt=":alt img:">
+        </div>
+        <div class="col-xs-12 col-md-9 text-justify margin-top">
+          <h1>:name:</h1>
+          <p>:summary:</p>
+          <h3 class="inline">Puntuación</h3><h4 class="inline">:rating:/10</h4><br>
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3 ">
+              <input type="button" class="seasons" value="https://api.tvmaze.com/shows/:id:/seasons">
+              <h3 class="">Temporadas</h3></button>
+            </div>
+            <div class="col-xs-6">
+              <div class="inline numeros" style = "display:-webkit-box"></div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="right info">
-      <h1>:name:</h1>
-      <p>:summary:</p>
-      <button class= "like">💗</button>
-      <h3 class="inline">Puntuación</h3><h4 class="inline">:rating:/10</h4><br>
-      <br>
-      <input type="button" class="seasons" value="https://api.tvmaze.com/shows/:id:/seasons">
-      <h3 class="inline">Temporadas</h3></button>
-      <div class="inline">
-        
-      </div>
-      
-
-    </di>
 
   </article>`
 
