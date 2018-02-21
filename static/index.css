@@ -6,9 +6,9 @@
 }
 
 
-@media screen and (min-width: 200px) and (max-width: 428px){
-  body {
-    background-color: blue;
+@media screen and (min-width: 200px) and (max-width: 800px){
+  .margin-top {
+    margin-top:10px;
   }
 }
 
@@ -112,29 +112,7 @@ app-footer {
 }
 
 
-.like {
-  background:  transparent;
-  border: 0;
-  outline: 0;
-  position: absolute;
-  cursor: pointer;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  transition: all 1s ease;
-}
 
-.tv-show.liked button.like{
-  font-size: 30px;
-}
-
-.tv-show.liked{
-  background-color: #34a3d6;
-}
-
-.tv-show.liked:hover{
-  background-color: #34a3d69c;
-}
 
 .url{
   color: transparent;

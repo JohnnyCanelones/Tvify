@@ -100,15 +100,14 @@ function renderSDetail(detail) {
   // template de base
   let template =` 
   <div class="tv-show">
-    <div class="row flex-items-xs-middle ">
+    <div class="row flex-items-xs-middle flex-items-xs-between">
       <div class="text-xs-center col-xs-12 col-md-3 " > 
         <img src=":img:" alt=":alt img:">
       </div>
       
-      <div class="col-xs-12 col-md-9">
+      <div class="col-xs-12 col-md-9 text-justify margin-top">
         <input type="button" class="url" value="https://api.tvmaze.com/shows/:url:"><h1>:name:</h1></a>
         <p>:summary:</p>
-        <button class= "like">💗</button> 
       </div>
     </div>
 
