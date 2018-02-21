@@ -5,6 +5,15 @@
   src: local("?"), url("plugins/Roboto/Roboto-LightItalic.ttf") format("truetype");
 }
 
+
+@media screen and (min-width: 200px) and (max-width: 428px){
+  body {
+    background-color: blue;
+  }
+}
+
+
+
 body {
   background-color: #e6e0e0;
   margin: 0px;
@@ -36,10 +45,24 @@ font-family: Roboto;
 }
 
 #app-body {
-  padding-top: 15vh;
+  padding-top: 6vh;
   width: 80%;
   margin: auto;
   min-height: 75vh;
+}
+
+#app-body form {
+  margin-bottom: 6vh;
+}
+
+#app-body form .btn-search{
+  background-color: #34a3d6;
+  color:white; 
+  
+}
+
+#app-body form .btn-search:hover{
+  background-color: #1291cc; 
 }
 
 #boton {
@@ -118,7 +141,7 @@ app-footer {
   width: 290px;
   border: 0;
   outline: 0;
-  top: 38px;
+  top: 10px;
   position: absolute;
   cursor: pointer;
   background:  transparent;
@@ -161,9 +184,7 @@ app-footer {
   margin-left: 20px;
 }
 
-.inline{
-  display: inline;
-}
+
 
 h4.inline{
   margin-right: 10px;
@@ -179,29 +200,6 @@ h3.inline {
 
 .right {
   float: right;
-}
-
-#search-form {
-  margin-bottom: 10px;
-  margin-right: 0px;
-  display: inline;
-  float: right;
-  
-}
-#search-form button {
-  margin-left: 5px;
-  border-radius: 6px;
-}
-
-#search-form button:hover {
-  background-color: #999999;
-}
-
-#search-form input[type="text"]{
-  width: 300px;
-  padding: 10px;
-  border-radius: 6px;
-    
 }
 
 .loader,
@@ -341,6 +339,7 @@ h3.inline {
     transform: rotate(360deg);
   }
 }
+
 
 
 
