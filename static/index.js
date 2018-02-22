@@ -141,8 +141,8 @@ function renderSDetail(detail) {
 
 
   let seasonsTemplate= `
-   
-    <input class="s-detail" value="https://api.tvmaze.com/seasons/:id:"><h4 class="inline">:number:</h4></input>
+    <h4 class="inline">:number:</h4>
+    <!--  <input class="s-detail" value="https://api.tvmaze.com/seasons/:id:"></input>-->
     
   `
   let detailSeasonTemplate = `
